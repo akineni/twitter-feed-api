@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\TweetService;
+use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -24,24 +25,36 @@ class TweetController extends Controller
 
     public function getTweets(Request $request): JsonResponse
     {
-        $maxFetchedTweets = env('MAX_FETCHED_TWEETS', 20);
-        $perPage = $request->get('per_page', $maxFetchedTweets); // Default to 20 tweets per page
-        $page = $request->get('page', 1); // Default to page 1
+        try {
+            $maxFetchedTweets = env('MAX_FETCHED_TWEETS', 20);
+            $perPage = $request->get('per_page', $maxFetchedTweets); // Default to 20 tweets per page
+            $page = $request->get('page', 1); // Default to page 1
 
-        $tweets = $this->tweetService->getAllTweets((int) $page, (int) $perPage);
-        return Response::success($tweets);
+            $tweets = $this->tweetService->getAllTweets((int) $page, (int) $perPage);
+            return Response::success($tweets);
+        } catch (Exception $e) {
+            return Response::error("An error occurred while fetching the tweets", 500);
+        }    
     }
 
     public function getMostLikedTweet(): JsonResponse
     {
-        $tweet = $this->tweetService->getMostLikedTweet();
-        return Response::success($tweet);
+        try {
+            $tweet = $this->tweetService->getMostLikedTweet();
+            return Response::success($tweet);
+        } catch (Exception $e) {
+            return Response::error("An error occurred while fetching the most liked tweet", 500);
+        }
     }
 
     public function getMostCommentedTweet(): JsonResponse
     {
-        $tweet = $this->tweetService->getMostCommentedTweet();
-        return Response::success($tweet);
+        try {
+            $tweet = $this->tweetService->getMostCommentedTweet();
+            return Response::success($tweet);
+        } catch (Exception $e) {
+            return Response::error("An error occurred while fetching the most commented tweet", 500);
+        }
     }
 }
 

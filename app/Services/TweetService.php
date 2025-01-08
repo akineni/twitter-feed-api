@@ -25,10 +25,25 @@ class TweetService
         $mockDataFilename = env('MOCK_DATA_FILENAME', 'mock_tweets.json');
 
         try {
-            $this->tweets = json_decode(Storage::get($mockDataFilename), true)['data'];
+            // Check if the file exists first
+            if (!Storage::exists($mockDataFilename)) {
+                throw new FileNotFoundException("The file {$mockDataFilename} was not found.");
+            }
+            $fileContents = Storage::get($mockDataFilename); // Try to get the file contents
+            $decodedData = json_decode($fileContents, true); // Decode the JSON
+
+            // Check if decoding was successful
+            if (json_last_error() === JSON_ERROR_NONE && isset($decodedData['data'])) {
+                $this->tweets = $decodedData['data'];
+            } else {
+                throw new \Exception('Invalid JSON or missing "data" key in ' . $mockDataFilename);
+            }
         } catch (FileNotFoundException $e) {
+            Log::error("Mock tweets file not found: {$e->getMessage()}", ['file' => $mockDataFilename]);
+            $this->tweets = []; // Set tweets to an empty array
+        } catch (\Exception $e) {
             Log::error("Error loading mock tweets: {$e->getMessage()}", ['file' => $mockDataFilename]);
-            $this->tweets = [];
+            $this->tweets = []; // Set tweets to an empty array
         }
     }
 
@@ -38,7 +53,7 @@ class TweetService
      * @param int $tweetId
      * @return array|null
      */
-    public function getSingleTweet($tweetId): array
+    public function getSingleTweet($tweetId): ?array
     {
         // Find the tweet with the specified ID
         return collect($this->tweets)->firstWhere('id', $tweetId) ?: null;
