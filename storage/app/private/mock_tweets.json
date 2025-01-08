@@ -1,0 +1,355 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "id": "1",
+      "text": "APIs should be designed with scalability in mind. #APIDesign",
+      "likes": 466,
+      "comments": 100,
+      "created_at": "2024-12-26T23:44:18.581Z"
+    },
+    {
+      "id": "2",
+      "text": "Understanding event-driven architecture can help build scalable systems. #Architecture",
+      "likes": 87,
+      "comments": 91,
+      "created_at": "2024-12-11T03:51:59.630Z"
+    },
+    {
+      "id": "3",
+      "text": "Learning a new framework can be overwhelming, but it’s worth it. #DevLife",
+      "likes": 360,
+      "comments": 69,
+      "created_at": "2024-12-07T23:52:38.047Z"
+    },
+    {
+      "id": "4",
+      "text": "Understanding event-driven architecture can help build scalable systems. #Architecture",
+      "likes": 393,
+      "comments": 67,
+      "created_at": "2024-12-28T16:36:00.641Z"
+    },
+    {
+      "id": "5",
+      "text": "Logging helps in debugging production issues faster. #Debugging",
+      "likes": 127,
+      "comments": 88,
+      "created_at": "2024-12-27T09:42:05.776Z"
+    },
+    {
+      "id": "6",
+      "text": "GraphQL or REST? Choosing the right API style depends on your needs. #APIDesign",
+      "likes": 434,
+      "comments": 72,
+      "created_at": "2024-12-20T09:14:29.778Z"
+    },
+    {
+      "id": "7",
+      "text": "Understanding HTTP status codes is essential for API development. #HTTP",
+      "likes": 407,
+      "comments": 20,
+      "created_at": "2025-01-02T14:53:39.729Z"
+    },
+    {
+      "id": "8",
+      "text": "Feature flags allow you to roll out changes safely. #DevOps",
+      "likes": 432,
+      "comments": 91,
+      "created_at": "2025-01-03T14:21:20.984Z"
+    },
+    {
+      "id": "9",
+      "text": "Microservices architecture has its pros and cons. Know when to use it. #Architecture",
+      "likes": 484,
+      "comments": 13,
+      "created_at": "2024-12-16T10:16:12.003Z"
+    },
+    {
+      "id": "10",
+      "text": "Working on open-source projects is a great way to improve skills. #OpenSource",
+      "likes": 159,
+      "comments": 65,
+      "created_at": "2024-12-09T00:17:08.011Z"
+    },
+    {
+      "id": "11",
+      "text": "Use caching wisely to improve API performance. #Performance",
+      "likes": 99,
+      "comments": 68,
+      "created_at": "2024-12-09T19:03:16.819Z"
+    },
+    {
+      "id": "12",
+      "text": "Microservices architecture has its pros and cons. Know when to use it. #Architecture",
+      "likes": 367,
+      "comments": 41,
+      "created_at": "2024-12-27T09:55:41.177Z"
+    },
+    {
+      "id": "13",
+      "text": "Write code for humans, not just for machines. #CleanCode",
+      "likes": 275,
+      "comments": 24,
+      "created_at": "2024-12-11T03:04:17.382Z"
+    },
+    {
+      "id": "14",
+      "text": "Happy New Year! Wishing everyone a year filled with learning and growth. #HappyNewYear2025",
+      "likes": 85,
+      "comments": 19,
+      "created_at": "2024-12-24T13:55:01.868Z"
+    },
+    {
+      "id": "15",
+      "text": "REST APIs are great, but have you tried GraphQL? #API #GraphQL",
+      "likes": 255,
+      "comments": 46,
+      "created_at": "2025-01-04T06:56:52.904Z"
+    },
+    {
+      "id": "16",
+      "text": "Understanding event-driven architecture can help build scalable systems. #Architecture",
+      "likes": 279,
+      "comments": 13,
+      "created_at": "2024-12-20T04:44:44.484Z"
+    },
+    {
+      "id": "17",
+      "text": "Always validate user input to prevent security issues. #Security",
+      "likes": 316,
+      "comments": 90,
+      "created_at": "2025-01-04T02:42:05.172Z"
+    },
+    {
+      "id": "18",
+      "text": "Always document your code! It helps you and your team. #DevAdvice",
+      "likes": 287,
+      "comments": 66,
+      "created_at": "2024-12-10T10:51:47.170Z"
+    },
+    {
+      "id": "19",
+      "text": "REST APIs are great, but have you tried GraphQL? #API #GraphQL",
+      "likes": 191,
+      "comments": 16,
+      "created_at": "2024-12-22T20:57:12.497Z"
+    },
+    {
+      "id": "20",
+      "text": "The more you practice, the better you get at solving problems. #CodePractice",
+      "likes": 50,
+      "comments": 51,
+      "created_at": "2025-01-03T09:38:04.256Z"
+    },
+    {
+      "id": "21",
+      "text": "TIL: You can use ‘php artisan’ to generate boilerplate code in Laravel. #PHP",
+      "likes": 290,
+      "comments": 95,
+      "created_at": "2024-12-21T01:37:16.578Z"
+    },
+    {
+      "id": "22",
+      "text": "Understanding HTTP status codes is essential for API development. #HTTP",
+      "likes": 160,
+      "comments": 75,
+      "created_at": "2025-01-03T19:17:46.019Z"
+    },
+    {
+      "id": "23",
+      "text": "Always validate user input to prevent security issues. #Security",
+      "likes": 240,
+      "comments": 23,
+      "created_at": "2024-12-30T13:29:32.152Z"
+    },
+    {
+      "id": "24",
+      "text": "Use caching wisely to improve API performance. #Performance",
+      "likes": 111,
+      "comments": 80,
+      "created_at": "2024-12-31T12:28:39.691Z"
+    },
+    {
+      "id": "25",
+      "text": "Open-source contributions are a great way to grow as a developer. #OpenSource #DevLife",
+      "likes": 95,
+      "comments": 10,
+      "created_at": "2024-12-09T22:21:52.528Z"
+    },
+    {
+      "id": "26",
+      "text": "Learning a new framework can be overwhelming, but it’s worth it. #DevLife",
+      "likes": 166,
+      "comments": 42,
+      "created_at": "2024-12-19T23:25:04.380Z"
+    },
+    {
+      "id": "27",
+      "text": "Agile methodology helps teams deliver value faster. #Agile",
+      "likes": 343,
+      "comments": 18,
+      "created_at": "2024-12-16T04:35:20.313Z"
+    },
+    {
+      "id": "28",
+      "text": "Git is an essential tool for every developer. Mastering it takes time. #Git",
+      "likes": 57,
+      "comments": 25,
+      "created_at": "2024-12-21T04:47:31.401Z"
+    },
+    {
+      "id": "29",
+      "text": "The SOLID principles help in writing flexible and maintainable code. #SOLID",
+      "likes": 366,
+      "comments": 98,
+      "created_at": "2024-12-24T00:51:20.364Z"
+    },
+    {
+      "id": "30",
+      "text": "Don’t just write code, understand the problem you are solving. #ProblemSolving",
+      "likes": 175,
+      "comments": 67,
+      "created_at": "2024-12-31T14:56:16.593Z"
+    },
+    {
+      "id": "31",
+      "text": "Did you know? Laravel’s Eloquent ORM makes database interactions elegant and fun! #PHP #Laravel",
+      "likes": 174,
+      "comments": 86,
+      "created_at": "2025-01-03T01:02:09.260Z"
+    },
+    {
+      "id": "32",
+      "text": "Keeping your dependencies up to date is crucial for security. #DevTips",
+      "likes": 415,
+      "comments": 99,
+      "created_at": "2024-12-27T07:16:13.692Z"
+    },
+    {
+      "id": "33",
+      "text": "Laravel’s middleware is powerful for handling request and response logic. #LaravelTips",
+      "likes": 377,
+      "comments": 79,
+      "created_at": "2024-12-11T15:51:47.050Z"
+    },
+    {
+      "id": "34",
+      "text": "Docker simplifies the deployment process for complex apps. #Docker",
+      "likes": 138,
+      "comments": 75,
+      "created_at": "2025-01-06T02:22:12.577Z"
+    },
+    {
+      "id": "35",
+      "text": "DevOps culture improves collaboration between devs and ops teams. #DevOps",
+      "likes": 220,
+      "comments": 46,
+      "created_at": "2024-12-15T02:42:14.116Z"
+    },
+    {
+      "id": "36",
+      "text": "Consistency is the key to becoming a better developer. #DevAdvice",
+      "likes": 198,
+      "comments": 68,
+      "created_at": "2024-12-14T05:39:04.186Z"
+    },
+    {
+      "id": "37",
+      "text": "Working on personal projects is one of the best ways to learn. #Coding",
+      "likes": 326,
+      "comments": 82,
+      "created_at": "2024-12-16T08:45:47.491Z"
+    },
+    {
+      "id": "38",
+      "text": "Open-source contributions are a great way to grow as a developer. #OpenSource #DevLife",
+      "likes": 182,
+      "comments": 67,
+      "created_at": "2024-12-27T09:11:11.808Z"
+    },
+    {
+      "id": "39",
+      "text": "Use caching wisely to improve API performance. #Performance",
+      "likes": 191,
+      "comments": 80,
+      "created_at": "2024-12-18T07:06:01.467Z"
+    },
+    {
+      "id": "40",
+      "text": "Working remotely has its perks, but staying productive can be challenging. #RemoteWork",
+      "likes": 320,
+      "comments": 74,
+      "created_at": "2024-12-16T08:32:35.636Z"
+    },
+    {
+      "id": "41",
+      "text": "Clean architecture in Laravel: separating controllers, services, and repositories. #CleanArchitecture",
+      "likes": 291,
+      "comments": 37,
+      "created_at": "2024-12-30T00:34:12.074Z"
+    },
+    {
+      "id": "42",
+      "text": "APIs should be designed with scalability in mind. #APIDesign",
+      "likes": 406,
+      "comments": 26,
+      "created_at": "2024-12-11T04:35:50.081Z"
+    },
+    {
+      "id": "43",
+      "text": "Learning a new framework can be overwhelming, but it’s worth it. #DevLife",
+      "likes": 330,
+      "comments": 86,
+      "created_at": "2025-01-06T03:29:28.057Z"
+    },
+    {
+      "id": "44",
+      "text": "Good naming conventions are key to writing readable code. #CodeQuality",
+      "likes": 173,
+      "comments": 47,
+      "created_at": "2024-12-31T04:00:52.529Z"
+    },
+    {
+      "id": "45",
+      "text": "Always break down large tasks into smaller ones. #Productivity",
+      "likes": 427,
+      "comments": 80,
+      "created_at": "2024-12-17T09:18:25.527Z"
+    },
+    {
+      "id": "46",
+      "text": "Always break down large tasks into smaller ones. #Productivity",
+      "likes": 126,
+      "comments": 48,
+      "created_at": "2024-12-15T17:32:06.678Z"
+    },
+    {
+      "id": "47",
+      "text": "Working on open-source projects is a great way to improve skills. #OpenSource",
+      "likes": 256,
+      "comments": 11,
+      "created_at": "2024-12-07T18:58:02.675Z"
+    },
+    {
+      "id": "48",
+      "text": "A well-designed database schema is key to good performance. #Database",
+      "likes": 426,
+      "comments": 21,
+      "created_at": "2024-12-14T20:42:14.619Z"
+    },
+    {
+      "id": "49",
+      "text": "Learning how to read error logs is an essential skill. #Debugging",
+      "likes": 474,
+      "comments": 51,
+      "created_at": "2024-12-30T14:58:02.995Z"
+    },
+    {
+      "id": "50",
+      "text": "Just completed a major project using Laravel Livewire. Loving the experience! #LaravelLivewire",
+      "likes": 84,
+      "comments": 100,
+      "created_at": "2024-12-22T07:57:35.296Z"
+    }
+  ]
+}

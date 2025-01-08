@@ -1,0 +1,236 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Twitter Feed API",
+		"version": "1.0.0",
+		"description": "API for managing tweets, including fetching the most liked and most commented tweets.",
+		"contact": {
+			"name": "Twitter Feed API Support",
+			"email": "akinlonueniola@gmail.com",
+			"phone": "+234-906-885-7142"
+		}
+	},
+	"servers": [
+		{
+			"url": "http://127.0.0.1:8000/api"
+		}
+	],
+	"paths": {
+		"/tweet/{id}": {
+			"get": {
+				"summary": "Get a single tweet by ID",
+				"operationId": "getSingleTweet",
+				"tags": [
+					"Tweets"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "The ID of the tweet",
+						"schema": {
+							"type": "integer",
+							"example": 1
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A single tweet",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "boolean",
+											"example": true
+										},
+										"message": {
+											"type": "string",
+											"example": "Operation successful"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "integer",
+													"example": 1
+												},
+												"content": {
+													"type": "string",
+													"example": "This is a tweet."
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Tweet not found"
+					}
+				}
+			}
+		},
+		"/tweets": {
+			"get": {
+				"summary": "Get all tweets",
+				"operationId": "getTweets",
+				"tags": [
+					"Tweets"
+				],
+				"parameters": [
+					{
+						"name": "page",
+						"in": "query",
+						"required": false,
+						"description": "Page number",
+						"schema": {
+							"type": "integer",
+							"example": 1
+						}
+					},
+					{
+						"name": "per_page",
+						"in": "query",
+						"required": false,
+						"description": "Number of tweets per page",
+						"schema": {
+							"type": "integer",
+							"example": 20
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A list of tweets",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "boolean",
+											"example": true
+										},
+										"message": {
+											"type": "string",
+											"example": "Operation successful"
+										},
+										"data": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"id": {
+														"type": "integer",
+														"example": 1
+													},
+													"content": {
+														"type": "string",
+														"example": "This is a tweet."
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/tweets/most-liked": {
+			"get": {
+				"summary": "Get the most liked tweet",
+				"operationId": "getMostLikedTweet",
+				"tags": [
+					"Tweets"
+				],
+				"responses": {
+					"200": {
+						"description": "The most liked tweet",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "boolean",
+											"example": true
+										},
+										"message": {
+											"type": "string",
+											"example": "Operation successful"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "integer",
+													"example": 1
+												},
+												"content": {
+													"type": "string",
+													"example": "This is the most liked tweet."
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/tweets/most-commented": {
+			"get": {
+				"summary": "Get the most commented tweet",
+				"operationId": "getMostCommentedTweet",
+				"tags": [
+					"Tweets"
+				],
+				"responses": {
+					"200": {
+						"description": "The most commented tweet",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "boolean",
+											"example": true
+										},
+										"message": {
+											"type": "string",
+											"example": "Operation successful"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "integer",
+													"example": 1
+												},
+												"content": {
+													"type": "string",
+													"example": "This is the most commented tweet."
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
