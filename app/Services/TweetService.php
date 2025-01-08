@@ -13,11 +13,33 @@ class TweetService
     private $tweets, $maxFetchedTweets;
     private const CACHE_KEY = 'tweets';
 
-    public function __construct()
+    /**
+     * Initialize the TweetService.
+     *
+     * The constructor optionally sets up the service for testing purposes by skipping
+     * the loading of mock tweets. loadMockTweets uses facades that cannot be used in the PHPUnit tests
+     *
+     * @param bool $test Indicates whether the service is being initialized for testing. 
+     *                   If true, the `loadMockTweets` method will not be called.
+     */
+    public function __construct(bool $test = false)
     {
         // Import the provided mock_tweets.json file into the storage directory for easy access.
-        $this->loadMockTweets();
+        if (!$test) $this->loadMockTweets();        
         $this->maxFetchedTweets = (int) env('MAX_FETCHED_TWEETS', 20);
+    }
+
+    /**
+     * Create and return a test instance of the TweetService.
+     *
+     * This method is intended for testing purposes and may initialize the service
+     * with mock data or a testing configuration.
+     *
+     * @return TweetService An instance of the TweetService for testing.
+     */
+    public static function getTestInstance(): TweetService
+    {
+        return new TweetService(true);
     }
 
     private function loadMockTweets(): void
@@ -34,16 +56,16 @@ class TweetService
 
             // Check if decoding was successful
             if (json_last_error() === JSON_ERROR_NONE && isset($decodedData['data'])) {
-                $this->tweets = $decodedData['data'];
+                $this->setTweets($decodedData['data']);
             } else {
                 throw new \Exception('Invalid JSON or missing "data" key in ' . $mockDataFilename);
             }
         } catch (FileNotFoundException $e) {
             Log::error("Mock tweets file not found: {$e->getMessage()}", ['file' => $mockDataFilename]);
-            $this->tweets = []; // Set tweets to an empty array
+            $this->setTweets([]); // Set tweets to an empty array
         } catch (\Exception $e) {
             Log::error("Error loading mock tweets: {$e->getMessage()}", ['file' => $mockDataFilename]);
-            $this->tweets = []; // Set tweets to an empty array
+            $this->setTweets([]); // Set tweets to an empty array
         }
     }
 
@@ -123,5 +145,38 @@ class TweetService
     private function generateCacheKey(int $page, int $perPage): string
     {
         return self::CACHE_KEY . "_page_{$page}_per_page_{$perPage}";
+    }
+
+    /**
+     * Set the collection of tweets.
+     *
+     * @param array $tweets An array of tweet data, where each tweet is an associative array with the following keys:
+     *                      - 'id' (string): The unique identifier of the tweet.
+     *                      - 'text' (string): The content of the tweet.
+     *                      - 'likes' (int): The number of likes the tweet has received.
+     *                      - 'comments' (int): The number of comments the tweet has received.
+     *                      - 'created_at' (string): The timestamp when the tweet was created.
+     * 
+     *                      Example:
+     *                      [
+     *                          ['id' => '1', 'text' => 'Tweet content', 'likes' => 466, 'comments' => 100, 'created_at' => '2024-12-26T23:44:18.581Z'],
+     *                          ['id' => '2', 'text' => 'Another tweet', 'likes' => 87, 'comments' => 91, 'created_at' => '2024-12-11T03:51:59.630Z']
+     *                      ]
+     *
+     * @return void
+     */
+    public function setTweets(array $tweets): void
+    {
+        $this->tweets = $tweets;
+    }
+
+    /**
+     * Retrieve the list of tweets.
+     *
+     * @return array The array of tweets.
+     */
+    public function getTweets(): array
+    {
+        return $this->tweets;
     }
 }

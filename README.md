@@ -42,7 +42,12 @@ Follow these steps to set up the application locally:
 4. **Configure your `.env` file**:
     - Set up necessary environment variables in the `.env` file.
 
-5. **Run the application**:
+5. **Generate app key**:
+    ```bash
+    php artisan key:generate
+    ```
+
+6. **Run the application**:
     ```bash
     php artisan serve
     ```
