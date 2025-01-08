@@ -20,7 +20,7 @@ class TweetController extends Controller
     public function getSingleTweet($tweetId): JsonResponse
     {
         $tweet = $this->tweetService->getSingleTweet($tweetId);
-        return Response::success($tweet);
+        return Response::success($tweet); // Macro defined in ResponseMacroServiceProvider
     }
 
     public function getTweets(Request $request): JsonResponse
