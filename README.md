@@ -6,7 +6,7 @@ This application implements a Laravel-based API for fetching, analyzing, and int
 
 ### 1. **GET /api/tweet/{id}**
 - **Description**: Returns a single tweet by ID.
-- **Response**: A JSON array of tweet.
+- **Response**: A JSON object of tweet.
 
 ### 2. **GET /api/tweets**
 - **Description**: Returns the first 20 tweets.
